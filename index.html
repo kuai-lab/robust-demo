@@ -17,11 +17,11 @@
 <div class="title">
     <h1>Robust Sound-Guided Image Manipulation</h1>
     <center>
-        <h3>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022</h3>
+        <h3>Under Review</h3>
     </center>
     
 </div>
-<div class="byline">
+<!-- <div class="byline">
     <div class="authors">
         <center>
             <div class="author"><sup> <h2>Seung Hyun&nbsp;Lee</a><sup>1</sup> &emsp; Wonseok&nbsp;Roh</a><sup>1</sup> &emsp; Wonmin&nbsp;Byeon</a><sup>2</sup> &emsp; Sang Ho&nbsp;Yoon</a><sup>3</sup>&emsp; Chanyoung&nbsp;Kim</a><sup>1</sup> &emsp; Jinkyu&nbsp;Kim</a><sup>1*</sup>&emsp; Sangpil&nbsp;Kim</a><sup>1*</sup></h2></sup></div>
@@ -43,40 +43,27 @@
             </a>
         </center>
     </div>
-</div>
+</div> -->
 
 
 <div class="container">
-    <div class="center-img">
+    <!-- <div class="center-img">
         <img class="content" src="https://kr.object.ncloudstorage.com/cvpr2022/overview.png">
-    </div>
+    </div> -->
     <div class="sections-container">
         <div class="section">
             <h2 class="section-title">Abstract</h2>
             <p>
-                The recent success of the generative model shows that leveraging the multi-modal embedding space can manipulate an image using text information.
-                However, manipulating an image with other sources rather than text, such as sound, is not easy due to the dynamic characteristics of the sources.
-                Especially, sound can convey vivid emotions and dynamic expressions of the real world.
-                Here, we propose a framework that directly encodes sound into the multi-modal (image-text) embedding space and manipulates an image from the space.
-                Our audio encoder is trained to produce a latent representation from an audio input, which is forced to be aligned with image and text representations in the multi-modal embedding space.
-                We use a direct latent optimization method based on aligned embeddings for sound-guided image manipulation.
-                We also show that our method can mix text and audio modalities, which enrich the variety of the image modification.
-                We verify the effectiveness of our sound-guided image manipulation quantitatively and qualitatively.
-                We also show that our method can mix different modalities, i.e., text and audio, which enrich the variety of the image modification.
-                The experiments on zero-shot audio classification and semantic-level image classification show that our proposed model outperforms other text and sound-guided state-of-the-art methods.
+                Recent successes suggest that an image can be manipulated by a text prompt, e.g., a landscape scene on a sunny day is manipulated into the same scene on a rainy day driven by a text input ``raining''. These approaches often utilize a StyleCLIP-based image generator, which leverages multi-modal (text and image) embedding space. However, we observe that such text inputs are often bottlenecked in providing and synthesizing rich semantic cues, e.g., differentiating heavy rain from rain with thunderstorms. To address this issue, we advocate leveraging an additional modality, sound, which has notable advantages in image manipulation as it can convey more diverse semantic cues (vivid emotions or dynamic expressions of the natural world) than texts. In this paper, we propose a novel approach that first extends the image-text joint embedding space with sound and applies a direct latent optimization method to manipulate a given image based on audio input, e.g., the sound of rain. Our extensive experiments show that our sound-guided image manipulation approach produces semantically and visually more plausible manipulation results than the state-of-the-art text and sound-guided image manipulation methods, which are further confirmed by our human evaluations. Our downstream task evaluations also show that our learned image-text-sound joint embedding space effectively encodes sound inputs.
             </p>
         </div>
         <div class="section">
             <h2 class="section-title">Method</h2>
-            <div class="center-img">
+            <!-- <div class="center-img">
                 <img class="content" src="https://kr.object.ncloudstorage.com/cvpr2022/main_figure.png"/>
-            </div>
+            </div> -->
             <p style="margin-top: 30px">
-                Our model consists of two main steps: (a) the <em>CLIP-based Contrastive Latent Representation Learning</em> step and (b) the <em>Sound-Guided Image Manipulation</em> step.
-                In (a), we train a set of encoders with three different modalities (audio, text, and image) to produce the matched latent representations.
-                The latent representations for a positive triplet pair (e.g., audio input: "Explosion", text: "explosion", and corresponding image) are mapped close together,
-                while that of negative pair samples further away in the (CLIP-based) embedding space (left).
-                In (b), we use a direct code optimization approach where a source latent code is modified in response to user-provided audio, producing a sound-guided image manipulation result (right).
+                we propose a novel audio-visual weakly paired contrastive learning, which prevents sound representation from learning biases between audio-visual from other videos in minibatches. Our approach increases the number of positive weak edges between sound and image which are sampled from other videos. By leveraging weakly connected audio-visual pairs which shares the same text description, we take advantage of the fact that videos having the same labels share common visual feature information. We propose to minimize Kullback–Leibler divergence between visual-text cosine similarity probability distribution and audio-visual cosine similarity probability distribution. Our weakly paired contrastive learning proceeds as follows. First, we sample additional visual data with text queries during the sound representation pre-training step. After that, our audio-visual similarity score aims to imitate the visual-text similarity score. Instead of estimating the identity matrix directly, the proposed method equalizes the audio-visual softmax-probability distribution and the visual-text softmax-probability distribution in minibatches. We find that our approach generates more robust images to fine-grained visual details, such as drastic color and hairstyle changes, than the previous method.
             </p>
         </div>
 <!--        <div class="section">-->
@@ -88,7 +75,7 @@
                 StyleCLIP. Unlike the text-driven approach, ours can produce more diverse manipulation results in response to different intensities of raining, i.e. raining, raining
                 with weak thunder, and raining with strong thunder.</p>
 
-            <div class="center-img">
+            <!-- <div class="center-img">
                 <figure>
                     <img class="content" src="https://kr.object.ncloudstorage.com/cvpr2022/fire_demo.gif"/>
                     <figcaption style="text-align: center;"> 🔊Fire crackling.</figcaption>
@@ -256,9 +243,9 @@
             </div>
         </div>
 	   
-    </div>
+    </div> -->
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-xs-12 text-left">
             <h3>BibTeX</h3>
             <p>If you use our code or data, please cite:</p>
@@ -278,8 +265,8 @@
     </div>
 	 <center>
 	    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkuai-lab.github.io%2Fcvpr2022sound%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-	    </center>
-    </div>
+	    </center> -->
+    </div> 
 </div>
 </body>
 <script>
