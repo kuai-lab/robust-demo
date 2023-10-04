@@ -63,7 +63,7 @@
                 <img class="content" src="https://kr.object.ncloudstorage.com/cvpr2022/main_figure.png"/>
             </div> -->
             <p style="margin-top: 30px">
-                we propose a novel audio-visual weakly paired contrastive learning, which prevents sound representation from learning biases between audio-visual from other videos in minibatches. Our approach increases the number of positive weak edges between sound and image which are sampled from other videos. By leveraging weakly connected audio-visual pairs which shares the same text description, we take advantage of the fact that videos having the same labels share common visual feature information. We propose to minimize Kullback–Leibler divergence between visual-text cosine similarity probability distribution and audio-visual cosine similarity probability distribution. Our weakly paired contrastive learning proceeds as follows. First, we sample additional visual data with text queries during the sound representation pre-training step. After that, our audio-visual similarity score aims to imitate the visual-text similarity score. Instead of estimating the identity matrix directly, the proposed method equalizes the audio-visual softmax-probability distribution and the visual-text softmax-probability distribution in minibatches. We find that our approach generates more robust images to fine-grained visual details, such as drastic color and hairstyle changes, than the previous method.
+                We propose a novel audio-visual weakly paired contrastive learning, which prevents sound representation from learning biases between audio-visual from other videos in minibatches. Our approach increases the number of positive weak edges between sound and image which are sampled from other videos. By leveraging weakly connected audio-visual pairs which shares the same text description, we take advantage of the fact that videos having the same labels share common visual feature information. We propose to minimize Kullback–Leibler divergence between visual-text cosine similarity probability distribution and audio-visual cosine similarity probability distribution. Our weakly paired contrastive learning proceeds as follows. First, we sample additional visual data with text queries during the sound representation pre-training step. After that, our audio-visual similarity score aims to imitate the visual-text similarity score. Instead of estimating the identity matrix directly, the proposed method equalizes the audio-visual softmax-probability distribution and the visual-text softmax-probability distribution in minibatches. We find that our approach generates more robust images to fine-grained visual details, such as drastic color and hairstyle changes, than the previous method.
             </p>
         </div>
 <!--        <div class="section">-->
@@ -98,6 +98,19 @@
                 
                 <audio controls>
                     <source src="./files/giggling_2.wav" type="audio/wav">
+                </audio>
+            </div> 
+            
+            <div class="example-item">
+                <img src="./files/3_b.jpeg" width="500" height="500">
+                <p class="arrow">→</p>
+                <img src="./files/3_a.jpeg" width="500" height="500">
+            </div>
+            <div class="sound-control">
+                <p> 🔊Rap god</p>
+                
+                <audio controls>
+                    <source src="./files/1_rap_god.wav" type="audio/wav">
                 </audio>
             </div> 
 
